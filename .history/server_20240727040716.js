@@ -1,12 +1,12 @@
 import { createServer } from 'http';
-import { Server } from 'socket.io';
+import socketIo from 'socket.io';
 
 const server = createServer((req, res) => {
   res.writeHead(200);
   res.end('WebRTC Signaling Server');
 });
 
-const io = new Server(server);
+const io = socketIo(server);
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -28,6 +28,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3001, () => {
-  console.log('listening on *:3001');
+server.listen(3000, () => {
+  console.log('listening on *:3000');
 });
