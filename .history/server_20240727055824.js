@@ -33,6 +33,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('candidate', (candidate) => {
+    console.log('Received candidate:', candidate);
     socket.broadcast.emit('candidate', candidate);
     console.log('Candidate broadcasted.');
   });
