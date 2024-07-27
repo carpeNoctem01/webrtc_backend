@@ -46,6 +46,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(8080, () => {
+server.listen(3001, () => {
   console.log('listening on *:3001');
 });
